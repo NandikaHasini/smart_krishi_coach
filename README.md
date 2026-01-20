@@ -133,10 +133,10 @@ smart_krishi_coach/
    ```bash
    git clone https://github.com/NandikaHasini/smart_krishi_coach.git
 RUN:
-cd smart_krishi_coach
-pip install -r requirements.txt
-python app.py
-http://127.0.0.1:5000/
+cd smart_krishi_coach,
+pip install -r requirements.txt,
+python app.py,
+http://127.0.0.1:5000/.
 
 🚀 Future Enhancements
 
