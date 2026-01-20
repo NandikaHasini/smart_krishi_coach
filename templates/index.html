@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Krishi Coach</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="top-bar">
+        <div class="title-block">
+            <h1>Smart Krishi Coach</h1>
+            <p class="subtitle">
+                7-Day Irrigation Advisory • Prototype for PRAKRITI QUEST 2025 – SRKR Engineering College
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Farm details card -->
+        <section class="card">
+            <h2>Enter farm details</h2>
+
+            <form id="plan-form">
+                <!-- Crop -->
+                <label>
+                    Crop
+                    <select name="crop" id="crop">
+                        <!-- Cereals -->
+                        <option value="paddy">Paddy (వరి)</option>
+                        <option value="maize">Maize / Corn (మొక్కజొన్న)</option>
+                        <option value="sorghum">Sorghum / Jowar (జొన్న)</option>
+                        <option value="pearl millet">Pearl millet / Bajra (సజ్జలు)</option>
+
+                        <!-- Pulses -->
+                        <option value="redgram">Red gram / Pigeon pea (కందులు)</option>
+                        <option value="greengram">Green gram / Moong (పెసర్లు)</option>
+                        <option value="blackgram">Black gram / Urad (మినప)</option>
+                        <option value="chickpea">Chickpea / Bengal gram (సెనగ)</option>
+
+                        <!-- Oilseeds -->
+                        <option value="groundnut">Groundnut (వేరుసెనగ)</option>
+                        <option value="sesame">Sesame / Til (నువ్వులు)</option>
+                        <option value="sunflower">Sunflower (సూర్యకాంతి)</option>
+
+                        <!-- Commercial / fibre crops -->
+                        <option value="cotton">Cotton (పత్తి)</option>
+                        <option value="sugarcane">Sugarcane (చెరకు)</option>
+                        <option value="tobacco">Tobacco (పొగాకు)</option>
+
+                        <!-- Horticulture (sample) -->
+                        <option value="banana">Banana (అరటి)</option>
+                        <option value="mango">Mango (మామిడి)</option>
+                        <option value="chilli">Chilli (మిర్చి)</option>
+
+                        <option value="other">Other crop (ఇతర పంట)</option>
+                    </select>
+                </label>
+
+                <!-- Soil type -->
+                <label>
+                    Soil type
+                    <select name="soil" id="soil">
+                        <option value="light">Light / Sandy (తేలిక మట్టి)</option>
+                        <option value="medium">Medium / Loam (మధ్యస్థ లోయం)</option>
+                        <option value="heavy">Heavy / Clay (భారీ మట్టి)</option>
+                        <option value="red">Red soil (ఎర్రమట్టి)</option>
+                        <option value="black">Black cotton soil (నల్లమట్టి)</option>
+                        <option value="alluvial">Alluvial soil (నదీతీర మట్టి)</option>
+                    </select>
+                </label>
+
+                <!-- Location (AP districts list) -->
+                <label>
+                    Location
+                    <select id="location" name="location">
+                        <option value="Bhimavaram">Bhimavaram</option>
+                        <option value="Vijayawada">Vijayawada</option>
+                        <option value="Guntur">Guntur</option>
+                        <option value="Nellore">Nellore</option>
+                        <option value="Ongole">Ongole</option>
+                        <option value="Kurnool">Kurnool</option>
+                        <option value="Anantapur">Anantapur</option>
+                        <option value="Kadapa">Kadapa</option>
+                        <option value="Tirupati">Tirupati</option>
+                        <option value="Visakhapatnam">Visakhapatnam</option>
+                        <option value="Srikakulam">Srikakulam</option>
+                        <option value="Vizianagaram">Vizianagaram</option>
+                        <option value="Eluru">Eluru</option>
+                        <option value="Rajamahendravaram">Rajamahendravaram</option>
+                        <option value="Machilipatnam">Machilipatnam</option>
+                        <option value="Nandyal">Nandyal</option>
+                        <option value="Chittoor">Chittoor</option>
+                        <option value="Other">Other location</option>
+                    </select>
+                </label>
+
+                <!-- Last irrigation date -->
+                <label>
+                    Last irrigation date
+                    <input type="date" id="last_irrigation">
+                </label>
+
+                <!-- Crop growth stage -->
+                <label>
+                    Crop stage
+                    <select id="stage" name="stage">
+                        <option value="nursery">Nursery / Seedling (నర్సరీ)</option>
+                        <option value="vegetative">Vegetative (ఆకుల పెరుగుదల)</option>
+                        <option value="tillering">Tillering / Branching (పొదల దశ)</option>
+                        <option value="flowering">Flowering (పుష్ప దశ)</option>
+                        <option value="fruiting">Pod / Fruiting (పండుదశ)</option>
+                        <option value="maturity">Maturity / Harvest (పక్వం)</option>
+                    </select>
+                </label>
+
+                <!-- Sensor mode -->
+                <label>
+                    Use sensor data (demo)
+                    <select id="sensor_mode">
+                        <option value="off">No (లేకుండా)</option>
+                        <option value="on">Yes (ఉంది)</option>
+                    </select>
+                </label>
+
+                <button type="submit" class="primary-btn">Generate 7-Day Plan</button>
+            </form>
+        </section>
+
+        <!-- Recommendation card -->
+        <section class="card">
+            <h2>Recommendation</h2>
+            <div id="plan-result"></div>
+            <div id="kpi-summary"></div>
+        </section>
+
+        <!-- Chat card -->
+        <section class="card">
+            <h2>Ask Smart Krishi Coach</h2>
+            <p class="helper-text">
+                Ask about irrigation, fertilizer timing, or spraying conditions.
+            </p>
+            <div id="chat-area"></div>
+            <div id="chat-input">
+                <input type="text" id="question"
+                       placeholder="Ask about irrigation, fertilizer or spraying...">
+                <button type="button" id="ask-btn" class="secondary-btn">Ask</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-text">
+            Team Smart Krishi Coach • Dept. of IT/CSE • SRKR Engineering College
+        </p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

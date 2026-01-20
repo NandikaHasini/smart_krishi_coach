@@ -1,0 +1,232 @@
+/* Layout and typography */
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f4f7fb;
+    margin: 0;
+    color: #222;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 16px 40px;
+}
+
+.top-bar {
+    background: linear-gradient(90deg, #1f7a3e, #38a169);
+    color: #ffffff;
+    padding: 16px 20px;
+}
+
+.title-block {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.subtitle {
+    margin: 4px 0 0;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+/* Cards */
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 16px 18px 18px;
+    margin-top: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Form layout */
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 20px;
+    align-items: end;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    padding: 6px 8px;
+    font-size: 14px;
+    margin-top: 4px;
+    border-radius: 4px;
+    border: 1px solid #cbd5e0;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #3182ce;
+    box-shadow: 0 0 0 1px rgba(49, 130, 206, 0.2);
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 8px 12px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.primary-btn {
+    grid-column: 1 / -1;
+    background-color: #2f855a;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background-color: #276749;
+}
+
+.secondary-btn {
+    background-color: #3182ce;
+    color: #ffffff;
+}
+
+.secondary-btn:hover {
+    background-color: #2b6cb0;
+}
+
+/* Table styling */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #e2e8f0;
+    padding: 6px 8px;
+    text-align: left;
+    font-size: 13px;
+}
+
+th {
+    background-color: #edf2f7;
+}
+
+/* Color codes for actions */
+
+.green {
+    background-color: #c6f6d5;
+}
+
+.yellow {
+    background-color: #fefcbf;
+}
+
+.red {
+    background-color: #fed7d7;
+}
+
+/* KPI summary */
+
+#kpi-summary {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Chat area */
+
+.helper-text {
+    font-size: 13px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #4a5568;
+}
+
+#chat-area {
+    border: 1px solid #e2e8f0;
+    padding: 10px;
+    min-height: 60px;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    background-color: #f7fafc;
+    border-radius: 4px;
+}
+
+#chat-input {
+    display: flex;
+    gap: 8px;
+}
+
+#chat-input input {
+    flex: 1;
+    padding: 6px 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #cbd5e0;
+}
+
+/* Chat bubbles */
+
+.bubble {
+    padding: 6px 8px;
+    margin-bottom: 6px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.bubble.you {
+    background-color: #e2e8f0;
+    align-self: flex-end;
+}
+
+.bubble.coach {
+    background-color: #bee3f8;
+}
+
+/* Footer */
+
+footer {
+    border-top: 1px solid #e2e8f0;
+    padding: 8px 16px 12px;
+    text-align: center;
+    font-size: 12px;
+    color: #4a5568;
+    background-color: #f7fafc;
+}
+
+.footer-text {
+    margin: 0;
+}
+
+/* Small screens */
+
+@media (max-width: 700px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .primary-btn {
+        grid-column: 1 / 2;
+    }
+}

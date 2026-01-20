@@ -1,0 +1,17 @@
+{
+  "paddy": {
+    "light": 3,
+    "medium": 4,
+    "heavy": 5
+  },
+  "cotton": {
+    "light": 5,
+    "medium": 6,
+    "heavy": 7
+  },
+  "maize": {
+    "light": 4,
+    "medium": 5,
+    "heavy": 6
+  }
+}
