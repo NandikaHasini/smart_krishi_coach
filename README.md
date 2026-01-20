@@ -145,3 +145,7 @@ http://127.0.0.1:5000/
 3.Real IoT sensor integration
 4.Telugu voice input for farmers
 5.WhatsApp alert system for irrigation reminders
+
+## 🏁 Conclusion
+
+Smart Krishi Coach is a practical and scalable solution aimed at improving irrigation efficiency, conserving water resources, and empowering farmers through technology-driven decision support.
